@@ -10,4 +10,9 @@ class MainWindow(QObject):
         self.music_player = QMediaPlayer()
         self.music_player.setVolume(100)
 
-        
+    super(MainWindow, self).__init__(parent)
+
+    ui_file = QFile(ui_file)
+    ui_file.open(QFile.ReadOnly)
+    loader = QUiLoader()
+    self.window = loader.load(ui_file)    
