@@ -34,3 +34,8 @@ class MainWindow(QObject):
     def open_action_triggered(self):
         file_name = QFileDialog.getOpenFileName(self.window)
         self.music_player.setMedia(QUrl.fromLocalFile(file_name[0]))
+
+    def quit_action_triggered(self):
+        self.window.close()
+
+    
