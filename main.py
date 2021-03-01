@@ -5,7 +5,7 @@ from PySide2.QtCore import QFile, QObject, QUrl
 from PySide2.QtMultimedia import QMediaPlayer
 
 class MainWindow(QObject):
-    def __init__(self, ui_file, parent=none):
+    def __init__(self, ui_file, parent=None):
 
         self.music_player = QMediaPlayer()
         self.music_player.setVolume(100)
