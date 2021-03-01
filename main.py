@@ -38,4 +38,5 @@ class MainWindow(QObject):
     def quit_action_triggered(self):
         self.window.close()
 
-    
+    def play_button_clicked(self):
+        self.music_player.play()
