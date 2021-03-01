@@ -15,4 +15,16 @@ class MainWindow(QObject):
     ui_file = QFile(ui_file)
     ui_file.open(QFile.ReadOnly)
     loader = QUiLoader()
-    self.window = loader.load(ui_file)    
+    self.window = loader.load(ui_file)
+
+    ui_file.close()
+
+
+    open_action = self.window.findChild(QAction, 'action_open')
+    open_action.triggered.connect(self.open_action_triggered)
+
+    quit_action = self.window.findChild(QAction, 'action_quit')
+    quit_action.triggered.connect(self.quit_action_triggered)
+
+    play_button = self.window.findChild(QPushButton, 'play_button')
+    play_button.clicked.connect(self.play_button_clicked)
