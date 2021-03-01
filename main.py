@@ -40,3 +40,9 @@ class MainWindow(QObject):
 
     def play_button_clicked(self):
         self.music_player.play()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    main_window = MainWindow('MainWindow.ui')
+    sys.exit(app.exec_())
