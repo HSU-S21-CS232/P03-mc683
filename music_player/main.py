@@ -13,6 +13,7 @@ class MainWindow(QObject):
         self.music_player = QMediaPlayer()
         self.music_player.setVolume(100)
 
+
         #call parent QObject constructor
         super(MainWindow, self).__init__(parent)
 
@@ -21,6 +22,7 @@ class MainWindow(QObject):
         ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.window = loader.load(ui_file)
+
 
         #always remember to close files
         ui_file.close()
@@ -38,6 +40,11 @@ class MainWindow(QObject):
         stop_button = self.window.findChild(QPushButton, 'stop_button')
         stop_button.clicked.connect(self.stop_button_clicked)
 
+        pause_button = self.window.findChild(QPushButton, 'pause_button')
+        pause_button.clicked.connect(self.pause_button_clicked)
+
+
+
         #show window to user
         self.window.show()
 
@@ -53,6 +60,11 @@ class MainWindow(QObject):
 
     def stop_button_clicked(self):
         self.music_player.stop()
+
+    def pause_button_clicked(self):
+        self.music_player.pause()
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
