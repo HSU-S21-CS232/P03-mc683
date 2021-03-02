@@ -35,6 +35,9 @@ class MainWindow(QObject):
         play_button = self.window.findChild(QPushButton, 'play_button')
         play_button.clicked.connect(self.play_button_clicked)
 
+        stop_button = self.window.findChild(QPushButton, 'stop_button')
+        stop_button.clicked.connect(self.stop_button_clicked)
+
         #show window to user
         self.window.show()
 
@@ -47,6 +50,9 @@ class MainWindow(QObject):
 
     def play_button_clicked(self):
         self.music_player.play()
+
+    def stop_button_clicked(self):
+        self.music_player.stop()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
