@@ -13,3 +13,11 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+
+        UIFunctions.removeTitleBar(True)
+
+
+        self.setWindowTitle('Main Window - Python Base')
+        UIFunctions.labelTitle(self, 'Main Window - Python Base')
+        UIFunctions.labelDescription(self, 'Set text')
