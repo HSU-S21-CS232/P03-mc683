@@ -8,16 +8,3 @@ from PySide2.QtWidgets import *
 from app_modules import *
 
 #I use examples and information from https://www.youtube.com/c/WandersonIsMe/featured . Very helpful and informative.
-class MainWindow(QMainWindow):
-    def __init__(self):
-        QMainWindow.__init__(self)
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-
-
-        UIFunctions.removeTitleBar(True)
-
-
-        self.setWindowTitle('Main Window - Python Base')
-        UIFunctions.labelTitle(self, 'Main Window - Python Base')
-        UIFunctions.labelDescription(self, 'Set text')
