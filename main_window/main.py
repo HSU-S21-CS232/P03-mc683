@@ -7,9 +7,3 @@ from PySide2.QtWidgets import *
 
 
 #I use examples and information from https://www.youtube.com/c/WandersonIsMe/featured . Very helpful and informative.
-
-class MainWindow(QMainWindow):
-    def __init__(self):
-        QMainWindow.__init__(self)
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
