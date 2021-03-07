@@ -157,24 +157,106 @@ border-radius: 10px;</string>
             <widget class="QPushButton" name="btn_maximize">
              <property name="geometry">
               <rect>
-               <x>20</x>
-               <y>20</y>
-               <width>75</width>
-               <height>23</height>
+               <x>10</x>
+               <y>10</y>
+               <width>17</width>
+               <height>16</height>
               </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>17</width>
+               <height>17</height>
+              </size>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
 	border:none;
-	border-radius:8px;
-	background-color: rgb(152, 152, 152);
+	border-radius:8px;	
+	background-color: rgb(0, 170, 127);
 }
-QPushButton:hover {
-	background-color: rgb(142, 142, 142);
+QPushButton:hover {	
+	background-color: rgba(0, 170, 127, 150);
 }</string>
              </property>
              <property name="text">
-              <string>PushButton</string>
+              <string/>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="btn_minimize">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>10</y>
+               <width>17</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>17</width>
+               <height>17</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	border:none;
+	border-radius:8px;	
+	background-color: rgb(213, 171, 0);
+}
+QPushButton:hover {	
+	background-color: rgba(213, 171, 0, 150);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="btn_close">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>10</y>
+               <width>17</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>17</width>
+               <height>17</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	border:none;
+	border-radius:8px;	
+	background-color: rgb(203, 0, 0);
+}
+QPushButton:hover {	
+	background-color: rgba(203, 0, 0, 150);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </widget>
