@@ -406,7 +406,7 @@ QPushButton:hover {
             <string>5</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_6">
+          <widget class="QPushButton" name="button_six">
            <property name="geometry">
             <rect>
              <x>170</x>
@@ -428,7 +428,7 @@ QPushButton:hover {
             <string>6</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_7">
+          <widget class="QPushButton" name="button_three">
            <property name="geometry">
             <rect>
              <x>170</x>
@@ -450,7 +450,7 @@ QPushButton:hover {
             <string>3</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_8">
+          <widget class="QPushButton" name="button_two">
            <property name="geometry">
             <rect>
              <x>90</x>
@@ -472,7 +472,7 @@ QPushButton:hover {
             <string>2</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_9">
+          <widget class="QPushButton" name="button_one">
            <property name="geometry">
             <rect>
              <x>10</x>

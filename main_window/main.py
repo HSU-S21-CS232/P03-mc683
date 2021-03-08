@@ -35,11 +35,55 @@ class MainWindow(QObject):
 
     def addEventListeners(self):
 
-        #add an event listener for press of the 7 button
+        #add an event listener for press of buttons.
+        zeroButton = self.window.findChild(QPushButton, 'button_zero')
+        zeroButton.clicked.connect(self.zeroButtonClicked)
+        oneButton = self.window.findChild(QPushButton, 'button_one')
+        oneButton.clicked.connect(self.oneButtonClicked)
+        twoButton = self.window.findChild(QPushButton, 'button_two')
+        twoButton.clicked.connect(self.twoButtonClicked)
+        threeButton = self.window.findChild(QPushButton, 'button_three')
+        threeButton.clicked.connect(self.threeButtonClicked)
+        fourButton = self.window.findChild(QPushButton, 'button_four')
+        fourButton.clicked.connect(self.fourButtonClicked)
+        fiveButton = self.window.findChild(QPushButton, 'button_five')
+        fiveButton.clicked.connect(self.fiveButtonClicked)
+        sixButton = self.window.findChild(QPushButton, 'button_six')
+        sixButton.clicked.connect(self.sixButtonClicked)
         sevenButton = self.window.findChild(QPushButton, 'button_seven')
         sevenButton.clicked.connect(self.sevenButtonClicked)
         eightButton = self.window.findChild(QPushButton, 'button_eight')
         eightButton.clicked.connect(self.eightButtonClicked)
+        nineButton = self.window.findChild(QPushButton, 'button_nine')
+        nineButton.clicked.connect(self.nineButtonClicked)
+
+    def zeroButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_zero')
+        self.handlButtonClick(button)
+
+    def oneButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_one')
+        self.handlButtonClick(button)
+
+    def twoButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_two')
+        self.handlButtonClick(button)
+
+    def threeButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_three')
+        self.handlButtonClick(button)
+
+    def fourButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_four')
+        self.handlButtonClick(button)
+
+    def fiveButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_five')
+        self.handlButtonClick(button)
+
+    def sixButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_six')
+        self.handlButtonClick(button)
 
     def sevenButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'button_seven')
@@ -47,6 +91,10 @@ class MainWindow(QObject):
 
     def eightButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'button_eight')
+        self.handlButtonClick(button)
+
+    def nineButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_nine')
         self.handlButtonClick(button)
 
     def handlButtonClick(self, button):
