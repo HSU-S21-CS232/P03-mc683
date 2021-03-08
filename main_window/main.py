@@ -57,6 +57,9 @@ class MainWindow(QObject):
         nineButton = self.window.findChild(QPushButton, 'button_nine')
         nineButton.clicked.connect(self.nineButtonClicked)
 
+        clearButton = self.window.findChild(QPushButton, 'clear_button')
+        clearButton.clicked.connect(self.clearButtonClicked)
+
     def zeroButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'button_zero')
         self.handlButtonClick(button)
@@ -101,6 +104,12 @@ class MainWindow(QObject):
         accumulator = self.window.findChild(QLineEdit, 'lineEdit')
         new_text = accumulator.text() + button.text()
         accumulator.setText(new_text)
+
+    def clearButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'clear_button')
+        accumulator = self.window.findChild(QLineEdit, 'lineEdit')
+        accumulator.setText('')
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
