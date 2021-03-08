@@ -31,3 +31,30 @@ class MainWindow(QObject):
 
         #shows window.
         self.window.show()
+
+
+    def addEventListeners(self):
+
+        #add an event listener for press of the 7 button
+        sevenButton = self.window.findChild(QPushButton, 'button_seven')
+        sevenButton.clicked.connect(self.sevenButtonClicked)
+        eightButton = self.window.findChild(QPushButton, 'button_eight')
+        eightButton.clicked.connect(self.eightButtonClicked)
+
+    def sevenButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_seven')
+        self.handlButtonClick(button)
+
+    def eightButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'button_eight')
+        self.handlButtonClick(button)
+
+    def handlButtonClick(self, button):
+        accumulator = self.window.findChild(QLineEdit, 'lineEdit')
+        new_text = accumulator.text() + button.text()
+        accumulator.setText(new_text)
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    main_window = MainWindow('ui_main.ui')
+    sys.exit(app.exec_())
