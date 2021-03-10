@@ -19,3 +19,6 @@ class Calculator:
 
     def load(self, number):
         self._accumulator = number
+
+    def value(self):
+        return self._accumulator

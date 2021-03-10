@@ -85,6 +85,10 @@ class MainWindow(QObject):
         elif self.last_arithmetic_operation == ArithmeticOperations.Divide:
             self.calculator.divide(value)
 
+        if self.last_arithmetic_operation != ArithmeticOperations.Base:
+            accumulator.setText(str(self.calculator.value()))
+            self.last_arithmetic_operation = ArithmeticOperations.Base
+
     def zeroButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'button_zero')
         self.handlButtonClick(button)
@@ -133,20 +137,18 @@ class MainWindow(QObject):
     def clearButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'clear_button')
         accumulator = self.window.findChild(QLineEdit, 'lineEdit')
-        accumulator.setText('')
+        accumulator.clear()
 
 
     def equalsButtonClicked(self, obj):
-        accumulator = self.window.findChild(QLineEdit, 'lineEdit')
-        print(accumulator)
-        result = eval(accumulator, {}, {})
-        accumulator.setText(result)
+        self.doArithmetic()
 
 
 
     def additionButtonClicked(self, obj):
-        button = self.window.findChild(QPushButton, 'addition_button')
-        self.handlButtonClick(button)
+        self.doArithmetic()
+        self.last_arithmetic_operation = ArithmeticOperations.Add
+        self.storeAccumulator()
 
     def subtractButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'subtract_button')
