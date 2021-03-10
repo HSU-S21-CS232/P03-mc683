@@ -57,6 +57,15 @@ class MainWindow(QObject):
         nineButton = self.window.findChild(QPushButton, 'button_nine')
         nineButton.clicked.connect(self.nineButtonClicked)
 
+        additionButton = self.window.findChild(QPushButton, 'addition_button')
+        additionButton.clicked.connect(self.additionButtonClicked)
+        subtractButton = self.window.findChild(QPushButton, 'subtract_button')
+        subtractButton.clicked.connect(self.subtractButtonClicked)
+        multiplyButton = self.window.findChild(QPushButton, 'multiply_button')
+        multiplyButton.clicked.connect(self.multiplyButtonClicked)
+        divideButton = self.window.findChild(QPushButton, 'divide_button')
+        divideButton.clicked.connect(self.divideButtonClicked)
+
         clearButton = self.window.findChild(QPushButton, 'clear_button')
         clearButton.clicked.connect(self.clearButtonClicked)
 
@@ -109,6 +118,22 @@ class MainWindow(QObject):
         button = self.window.findChild(QPushButton, 'clear_button')
         accumulator = self.window.findChild(QLineEdit, 'lineEdit')
         accumulator.setText('')
+
+    def additionButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'addition_button')
+        self.handlButtonClick(button)
+
+    def subtractButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'subtract_button')
+        self.handlButtonClick(button)
+
+    def multiplyButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'multiply_button')
+        self.handlButtonClick(button)
+
+    def divideButtonClicked(self, obj):
+        button = self.window.findChild(QPushButton, 'divide_button')
+        self.handlButtonClick(button)
 
 
 if __name__ == '__main__':
