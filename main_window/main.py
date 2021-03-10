@@ -151,16 +151,19 @@ class MainWindow(QObject):
         self.storeAccumulator()
 
     def subtractButtonClicked(self, obj):
-        button = self.window.findChild(QPushButton, 'subtract_button')
-        self.handlButtonClick(button)
+        self.doArithmetic()
+        self.last_arithmetic_operation = ArithmeticOperations.Subtract
+        self.storeAccumulator()
 
     def multiplyButtonClicked(self, obj):
-        button = self.window.findChild(QPushButton, 'multiply_button')
-        self.handlButtonClick(button)
+        self.doArithmetic()
+        self.last_arithmetic_operation = ArithmeticOperations.Multiply
+        self.storeAccumulator()
 
     def divideButtonClicked(self, obj):
-        button = self.window.findChild(QPushButton, 'divide_button')
-        self.handlButtonClick(button)
+        self.doArithmetic()
+        self.last_arithmetic_operation = ArithmeticOperations.Divide
+        self.storeAccumulator()
 
 
 if __name__ == '__main__':
