@@ -4,6 +4,7 @@ from PySide2.QtUiTools import QUiLoader
 
 from PySide2.QtWidgets import QApplication, QLineEdit, QPushButton, QMessageBox
 from PySide2.QtCore import QFile, QObject, QIODevice
+from calcModel import Calculator
 
 
 #I use examples and information from https://www.youtube.com/c/WandersonIsMe/featured . Very helpful and informative.
@@ -18,6 +19,9 @@ class ArithmeticOperations(Enum):
 class MainWindow(QObject):
     def __init__(self, ui_file, parent=None):
         super(MainWindow, self).__init__(parent)
+
+        self.calculator = Calculator()
+        self.last_arithmetic_operation = ArithmeticOperations.Base
 
         #Load ui file to python.
         ui_file = QFile(ui_file)
