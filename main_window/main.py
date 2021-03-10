@@ -33,41 +33,29 @@ class MainWindow(QObject):
         self.window.show()
 
 
+
     def addEventListeners(self):
 
         #add an event listener for press of buttons.
-        zeroButton = self.window.findChild(QPushButton, 'button_zero')
-        zeroButton.clicked.connect(self.zeroButtonClicked)
-        oneButton = self.window.findChild(QPushButton, 'button_one')
-        oneButton.clicked.connect(self.oneButtonClicked)
-        twoButton = self.window.findChild(QPushButton, 'button_two')
-        twoButton.clicked.connect(self.twoButtonClicked)
-        threeButton = self.window.findChild(QPushButton, 'button_three')
-        threeButton.clicked.connect(self.threeButtonClicked)
-        fourButton = self.window.findChild(QPushButton, 'button_four')
-        fourButton.clicked.connect(self.fourButtonClicked)
-        fiveButton = self.window.findChild(QPushButton, 'button_five')
-        fiveButton.clicked.connect(self.fiveButtonClicked)
-        sixButton = self.window.findChild(QPushButton, 'button_six')
-        sixButton.clicked.connect(self.sixButtonClicked)
-        sevenButton = self.window.findChild(QPushButton, 'button_seven')
-        sevenButton.clicked.connect(self.sevenButtonClicked)
-        eightButton = self.window.findChild(QPushButton, 'button_eight')
-        eightButton.clicked.connect(self.eightButtonClicked)
-        nineButton = self.window.findChild(QPushButton, 'button_nine')
-        nineButton.clicked.connect(self.nineButtonClicked)
+        self.window.findChild(QPushButton, 'button_zero').clicked.connect(self.zeroButtonClicked) #0
+        self.window.findChild(QPushButton, 'button_one').clicked.connect(self.oneButtonClicked) #1
+        self.window.findChild(QPushButton, 'button_two').clicked.connect(self.twoButtonClicked) #2
+        self.window.findChild(QPushButton, 'button_three').clicked.connect(self.threeButtonClicked) #3
+        self.window.findChild(QPushButton, 'button_four').clicked.connect(self.fourButtonClicked) #4
+        self.window.findChild(QPushButton, 'button_five').clicked.connect(self.fiveButtonClicked) #5
+        self.window.findChild(QPushButton, 'button_six').clicked.connect(self.sixButtonClicked) #6
+        self.window.findChild(QPushButton, 'button_seven').clicked.connect(self.sevenButtonClicked) #7
+        self.window.findChild(QPushButton, 'button_eight').clicked.connect(self.eightButtonClicked) #8
+        self.window.findChild(QPushButton, 'button_nine').clicked.connect(self.nineButtonClicked) #9
 
-        additionButton = self.window.findChild(QPushButton, 'addition_button')
-        additionButton.clicked.connect(self.additionButtonClicked)
-        subtractButton = self.window.findChild(QPushButton, 'subtract_button')
-        subtractButton.clicked.connect(self.subtractButtonClicked)
-        multiplyButton = self.window.findChild(QPushButton, 'multiply_button')
-        multiplyButton.clicked.connect(self.multiplyButtonClicked)
-        divideButton = self.window.findChild(QPushButton, 'divide_button')
-        divideButton.clicked.connect(self.divideButtonClicked)
+        self.window.findChild(QPushButton, 'addition_button').clicked.connect(self.additionButtonClicked) #+
+        self.window.findChild(QPushButton, 'subtract_button').clicked.connect(self.subtractButtonClicked) #-
+        self.window.findChild(QPushButton, 'multiply_button').clicked.connect(self.multiplyButtonClicked) #*
+        self.window.findChild(QPushButton, 'divide_button').clicked.connect(self.divideButtonClicked) #/
 
-        clearButton = self.window.findChild(QPushButton, 'clear_button')
-        clearButton.clicked.connect(self.clearButtonClicked)
+        self.window.findChild(QPushButton, 'clear_button').clicked.connect(self.clearButtonClicked)
+        self.window.findChild(QPushButton, 'equals_button').clicked.connect(self.equalsButtonClicked)
+        
 
     def zeroButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'button_zero')
@@ -118,6 +106,15 @@ class MainWindow(QObject):
         button = self.window.findChild(QPushButton, 'clear_button')
         accumulator = self.window.findChild(QLineEdit, 'lineEdit')
         accumulator.setText('')
+
+
+    def equalsButtonClicked(self, obj):
+        accumulator = self.window.findChild(QLineEdit, 'lineEdit')
+        print(accumulator)
+        result = eval(accumulator, {}, {})
+        accumulator.setText(result)
+
+
 
     def additionButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'addition_button')
