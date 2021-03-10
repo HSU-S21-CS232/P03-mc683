@@ -63,6 +63,23 @@ class MainWindow(QObject):
         self.window.findChild(QPushButton, 'clear_button').clicked.connect(self.clearButtonClicked)
         self.window.findChild(QPushButton, 'equals_button').clicked.connect(self.equalsButtonClicked)
 
+    def storeAccumulator(self):
+        accumulator = self.window.findChild(QLineEdit, 'lineEdit')
+        value = int(accumulator.text())
+        self.calculator.load(value)
+        accumulator.setText("")
+
+    def doArithmetic(self):
+        accumulator = self.window.findChild(QLineEdit, 'lineEdit')
+        value = int(accumulator.text())
+        if self.last_arithmetic_operation == ArithmeticOperations.Add:
+            self.calculator.add(value)
+        elif self.last_arithmetic_operation == ArithmeticOperations.Subtract:
+            self.calculator.subtract(value)
+        elif self.last_arithmetic_operation == ArithmeticOperations.Multiply:
+            self.calculator.multiply(value)
+        elif self.last_arithmetic_operation == ArithmeticOperations.Divide:
+            self.calculator.divide(value)
 
     def zeroButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'button_zero')
