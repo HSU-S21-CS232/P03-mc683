@@ -1,4 +1,5 @@
 import sys
+from enum import Enum
 from PySide2.QtUiTools import QUiLoader
 
 from PySide2.QtWidgets import QApplication, QLineEdit, QPushButton, QMessageBox
@@ -7,6 +8,12 @@ from PySide2.QtCore import QFile, QObject, QIODevice
 
 #I use examples and information from https://www.youtube.com/c/WandersonIsMe/featured . Very helpful and informative.
 
+class ArithmeticOperations(Enum):
+    Base = 0
+    Add = '+'
+    Subtract = '-'
+    Multiply = '*'
+    Divide = '/'
 
 class MainWindow(QObject):
     def __init__(self, ui_file, parent=None):
@@ -55,7 +62,7 @@ class MainWindow(QObject):
 
         self.window.findChild(QPushButton, 'clear_button').clicked.connect(self.clearButtonClicked)
         self.window.findChild(QPushButton, 'equals_button').clicked.connect(self.equalsButtonClicked)
-        
+
 
     def zeroButtonClicked(self, obj):
         button = self.window.findChild(QPushButton, 'button_zero')
