@@ -37,6 +37,7 @@ class MainWindow(QObject):
         self.window = loader.load(ui_file)
         self.window.setWindowFlags(Qt.Window | Qt.FramelessWindowHint)
 
+
         #Be sure to close.
         ui_file.close()
 
@@ -69,6 +70,7 @@ class MainWindow(QObject):
 
         self.window.findChild(QPushButton, 'clear_button').clicked.connect(self.clearButtonClicked)
         self.window.findChild(QPushButton, 'equals_button').clicked.connect(self.equalsButtonClicked)
+        self.window.findChild(QPushButton, 'btn_close').clicked.connect(self.closebuttonclicked)
 
     def storeAccumulator(self):
         accumulator = self.window.findChild(QLineEdit, 'lineEdit')
@@ -167,6 +169,10 @@ class MainWindow(QObject):
         self.doArithmetic()
         self.last_arithmetic_operation = ArithmeticOperations.Divide
         self.storeAccumulator()
+
+    def closebuttonclicked(self, event):
+        self.window.close()
+
 
 
 if __name__ == '__main__':
