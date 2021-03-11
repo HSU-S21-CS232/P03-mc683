@@ -2,8 +2,8 @@ import sys
 from enum import Enum
 from PySide2.QtUiTools import QUiLoader
 
-from PySide2.QtWidgets import QApplication, QLineEdit, QPushButton, QMessageBox
-from PySide2.QtCore import QFile, QObject, QIODevice
+from PySide2.QtWidgets import QApplication, QLineEdit, QPushButton, QMessageBox, QGridLayout, QSizePolicy
+from PySide2.QtCore import QFile, QObject, QIODevice, Qt
 from calcModel import Calculator
 
 
@@ -30,9 +30,12 @@ class MainWindow(QObject):
             sys.exit(-1)
 
 
+
+
         ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.window = loader.load(ui_file)
+        self.window.setWindowFlags(Qt.Window | Qt.FramelessWindowHint)
 
         #Be sure to close.
         ui_file.close()
