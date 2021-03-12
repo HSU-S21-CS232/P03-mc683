@@ -71,6 +71,7 @@ class MainWindow(QObject):
         self.window.findChild(QPushButton, 'clear_button').clicked.connect(self.clearButtonClicked)
         self.window.findChild(QPushButton, 'equals_button').clicked.connect(self.equalsButtonClicked)
         self.window.findChild(QPushButton, 'btn_close').clicked.connect(self.closebuttonclicked)
+        self.window.findChild(QPushButton, 'btn_minimize').clicked.connect(self.minimizebuttonclicked)
 
     def storeAccumulator(self):
         accumulator = self.window.findChild(QLineEdit, 'lineEdit')
@@ -172,6 +173,9 @@ class MainWindow(QObject):
 
     def closebuttonclicked(self, event):
         self.window.close()
+
+    def minimizebuttonclicked(self, event):
+        self.window.showMinimized()
 
 
 
