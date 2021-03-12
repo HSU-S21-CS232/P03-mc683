@@ -1,0 +1,13 @@
+	For this project I had really high ambitions at first, wanting to create a music player, but upon realizing that I needed to be comfortable converting C++ syntax to Python I 
+was fumbling a lot during this portion. Working with the Qt designer was enjoyable and for the most part pretty straight forward, there is a plethora of things that you
+can fine tune and adjust, but as someone who was just getting started creating a window and placing buttons and making alignments was obtainable. The downfall of my music player
+idea was trying to connect the volume slider/dial to the coding behind the scenes. Something to do with using this one time of widget that was directly connected to volume
+and beign able to access it using the import from that library, but I couldn't find the widget in my version of Qt designer.
+	If I had to give myself some advice based on what I experienced during this project it would be to start simple then grow from there. When working with something that
+is new to you, don't try and shoot for the sky. If you can get the concept of the beginning example then do something to make that example better like adding an extra feature
+or something along those lines. I do not know where my computer science journey is going to take me, but if it goes in this kind of ui design direction then I think that 
+I would benefit from reading more on what all the widgets are capable of, like what functions are inside the library. I had some trial and error when dealing with the window
+minimize, maximize, and close events that I could probably have avoided if I had that knowledge before hand. Like the professor says though, a lot of this stuff just comes
+with time and experience. I'm very curious to see how some of this ui and code integration works in the C++ format as I feel more comfortable with that language. The most fun 
+part of this project though was seeing a window pop up that I created and seeing the widgets in there reacting when clicked or hovered over as a result of my ui design and
+from my coding had functionality, that was pretty cool.
