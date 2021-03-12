@@ -16,6 +16,8 @@ class ArithmeticOperations(Enum):
     Multiply = '*'
     Divide = '/'
 
+GLOBAL_STATE = 0
+
 class MainWindow(QObject):
     def __init__(self, ui_file, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -72,6 +74,7 @@ class MainWindow(QObject):
         self.window.findChild(QPushButton, 'equals_button').clicked.connect(self.equalsButtonClicked)
         self.window.findChild(QPushButton, 'btn_close').clicked.connect(self.closebuttonclicked)
         self.window.findChild(QPushButton, 'btn_minimize').clicked.connect(self.minimizebuttonclicked)
+        self.window.findChild(QPushButton, 'btn_maximize').clicked.connect(self.maximizebuttonclicked)
 
     def storeAccumulator(self):
         accumulator = self.window.findChild(QLineEdit, 'lineEdit')
@@ -176,6 +179,19 @@ class MainWindow(QObject):
 
     def minimizebuttonclicked(self, event):
         self.window.showMinimized()
+
+    def maximizebuttonclicked(self, event):
+        global GLOBAL_STATE
+        status = GLOBAL_STATE
+
+        if status == 0:
+            self.window.showMaximized()
+
+            GLOBAL_STATE = 1
+
+        else:
+            GLOBAL_STATE = 0
+            self.window.showNormal()
 
 
 
