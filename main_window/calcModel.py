@@ -12,7 +12,7 @@ class Calculator:
         self._accumulator *= number
 
     def divide(self, number):
-        self._accumulator += number
+        self._accumulator /= number
 
     def clear(self):
         self._accumulator = 0.0
